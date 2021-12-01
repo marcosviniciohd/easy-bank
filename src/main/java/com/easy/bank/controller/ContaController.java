@@ -20,7 +20,7 @@ public class ContaController {
 	@Autowired
 	private ContaDAO contaDAO;
 
-	
+	@GetMapping
 	public ArrayList<Conta> listarContas() {
 		ArrayList<Conta> lista;
 		lista = (ArrayList<Conta>) contaDAO.findAll();

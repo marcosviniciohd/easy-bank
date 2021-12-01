@@ -20,6 +20,7 @@ public class ClienteController {
 	@Autowired
 	private ClienteDAO clienteDAO;
 
+	@GetMapping
 	public ArrayList<Cliente> listarClientes() {
 		ArrayList<Cliente> listaDeClientes;
 		listaDeClientes = (ArrayList<Cliente>) clienteDAO.findAll();
