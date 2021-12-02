@@ -1,4 +1,4 @@
-# Desafio em Grupo Formação Tech Itaú - Trilha de especialização
+# Desafio em Grupo Formação Tech Itaú - Trilha de Especialização
 ## Web API Easy Bank - Itaú
 #### Descrição
 
@@ -20,11 +20,11 @@ Java
 
 - [Marcos Vinício Fernandes](https://github.com/marcosviniciohd)
 
-- Suzana
+- Suzana Abreu Portal
 
 - José Maurício
 
-- Bruno
+- Bruno Daniel
 
   
 

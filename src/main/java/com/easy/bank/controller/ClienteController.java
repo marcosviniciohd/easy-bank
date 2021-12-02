@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.easy.bank.dao.ClienteDAO;
@@ -20,6 +24,7 @@ public class ClienteController {
 	@Autowired
 	private ClienteDAO clienteDAO;
 
+	//Listar todos os clientes
 	@GetMapping
 	public ArrayList<Cliente> listarClientes() {
 		ArrayList<Cliente> listaDeClientes;
@@ -28,6 +33,7 @@ public class ClienteController {
 		return listaDeClientes;
 	}
 
+	//Buscar cliente pelo ID
 	@GetMapping("/{clienteId}")
 	public ResponseEntity<Cliente> recuperarConta(@PathVariable int clienteId) {
 
@@ -38,6 +44,13 @@ public class ClienteController {
 		}
 
 		return ResponseEntity.notFound().build();
+	}
+
+	//Adicionar cliente
+	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public Cliente adicionarCliente(@RequestBody Cliente cliente) {
+		return clienteDAO.save(cliente);
 	}
 
 }
