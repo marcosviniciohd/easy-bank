@@ -20,6 +20,8 @@ public class ContaController {
 	@Autowired
 	private ContaDAO contaDAO;
 
+	
+	//Lista todas as contas
 	@GetMapping
 	public ArrayList<Conta> listarContas() {
 		ArrayList<Conta> lista;
@@ -28,6 +30,7 @@ public class ContaController {
 		return lista;
 	}
 
+	// Busca conta pelo número
 	@GetMapping("/{contaId}")
 	public ResponseEntity<Conta> recuperarConta(@PathVariable int contaId) {
 
@@ -39,5 +42,7 @@ public class ContaController {
 
 		return ResponseEntity.notFound().build();
 	}
+	
+	
 
 }
